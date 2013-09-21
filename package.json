@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "schema-org-api",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "request": "~2.27.0",
     "jsdom": "~0.8.4",
     "htmlparser": "~1.7.6",
-    "soupselect": "~0.2.0"
+    "soupselect": "~0.2.0",
+    "markdown": "~0.5.0"
   }
 }

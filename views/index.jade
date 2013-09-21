@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .jumbotron
+    .container
+      h1= title
+      p Welcome to the #{title}!
+  .container
+    .row
+      .col-md-12
+        p!=md(readme)

@@ -1,7 +1,10 @@
 var select = require('soupselect').select,
     htmlparser = require('htmlparser'),
     request = require('request'),
-    schema_url = 'http://schema.org';
+    schema_url = 'http://schema.org',
+    fs = require('fs'),
+    md = require('markdown').markdown.toHTML,
+    readme = fs.readFileSync(__dirname + '/../readme.md').toString();
 
 function parse_html (html, cb) {
   var handler = new htmlparser.DefaultHandler(cb),
@@ -15,7 +18,11 @@ function parse_html (html, cb) {
  */
 
 exports.index = function (req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { 
+    title: 'schema.org API',
+    readme: readme,
+    md: md
+  });
 };
 
 exports.entity = function (req, res) {
