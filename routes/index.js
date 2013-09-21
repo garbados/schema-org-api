@@ -36,7 +36,7 @@ exports.entity = function (req, res) {
                     url: schema_url + property.attribs.href,
                     property: property.children[0].raw,
                     type: type.children[1] ? {
-                      url: schema_url + type.children[1].attribs.href,
+                      url: [schema_url, type.children[1].attribs.href].join('/'),
                       property: type.children[1].children[0].raw
                     } : type.children[0].raw.replace(/\s+/g, ''),
                     description: select(row, 'td.prop-desc')[0].children[0].raw
